@@ -5,6 +5,16 @@
 <body>
 
   <script type="text/javascript">
+
+    // EMPLOYEE DISCOUNT
+    function staffMember(employee, discount) {
+      this.name = name;
+      this.discount = discount;
+    }
+
+    var james = new staffMember("James", 10);
+    var donald = new staffMember("Donald", 5);
+    var me = new staffMember("Jorge", 20)
     
     var cashRegister = {
       total: 0,
@@ -54,6 +64,9 @@
         }
         return true;
       },
+      applyDiscount: function(staffMember) {
+        this.total -= (this.total * (staffMember.discount/100))
+      }
     };
 
     // var cart = {
@@ -73,6 +86,7 @@
     cashRegister.scan("milk", 1);
     cashRegister.scan("magazine", 1);
     cashRegister.voidLastTransaction("eggs", 3)
+    cashRegister.applyDiscount(me);
     console.log("Your total is " + cashRegister.total.toFixed(2));
     
 
