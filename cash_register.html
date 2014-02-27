@@ -12,19 +12,22 @@
       this.discount = discount;
     }
 
+    // EMPLOYEES
     var james = new staffMember("James", 10);
     var donald = new staffMember("Donald", 5);
     var me = new staffMember("Jorge", 20)
     
+
+    // THE CASH REGISTER
     var cashRegister = {
       total: 0,
-      add: function(itemPrice) {
+      add: function(itemPrice) {                                // ADD TO CART
         this.total += itemPrice;
       },
-      substract: function(itemPrice) {
+      substract: function(itemPrice) {                          // REMOVE FROM CART
         this.total -= itemPrice;
       },
-      scan: function (item, quantity) {
+      scan: function (item, quantity) {                         // SCAN ITEM 
         switch(item) {
           case "eggs":
             this.add(0.98 * quantity)
@@ -44,7 +47,7 @@
         }
         return true;
       },
-      voidLastTransaction: function(item, quantity) {
+      voidLastTransaction: function(item, quantity) {            // VOID TRANSACTION
         switch(item) {
           case "eggs":
             this.substract(0.98 * quantity)
@@ -63,12 +66,13 @@
             break;
         }
         return true;
-      },
-      applyDiscount: function(staffMember) {
+      },      
+      applyDiscount: function(staffMember) {                      // APPLY DISCOUNT
         this.total -= (this.total * (staffMember.discount/100))
       }
     };
 
+    // FULL CART BEFORE SWITCH STATEMENTS
     // var cart = {
     //   eggs: 0.98,
     //   milk: 1.23,
@@ -76,6 +80,7 @@
     //   chocolate: 0.45
     // }
 
+    // SHOW EACH ITEM IN CART WITH PRICE AND GRAND TOTAL
     // for(var item in cart) {
     //   console.log(item + ": " + cart[item]);
     //   cashRegister.add(cart[item]);
