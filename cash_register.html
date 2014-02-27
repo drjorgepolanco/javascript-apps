@@ -1,0 +1,84 @@
+<html>
+<head>
+  <title>Cash Register</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    
+    var cashRegister = {
+      total: 0,
+      add: function(itemPrice) {
+        this.total += itemPrice;
+      },
+      substract: function(itemPrice) {
+        this.total -= itemPrice;
+      },
+      scan: function (item, quantity) {
+        switch(item) {
+          case "eggs":
+            this.add(0.98 * quantity)
+            break;
+          case "milk":
+            this.add(1.23 * quantity)
+            break;
+          case "magazine":
+            this.add(4.99 * quantity)
+            break;
+          case "chocolate":
+            this.add(0.45 * quantity)
+            break;
+          default:
+            console.log("No " + item + " scanned!");
+            break;
+        }
+        return true;
+      },
+      voidLastTransaction: function(item, quantity) {
+        switch(item) {
+          case "eggs":
+            this.substract(0.98 * quantity)
+            break;
+          case "milk":
+            this.substract(1.23 * quantity)
+            break;
+          case "magazine":
+            this.substract(4.99 * quantity)
+            break;
+          case "chocolate":
+            this.substract(0.45 * quantity)
+            break;
+          default:
+            console.log("No " + item + " voided!");
+            break;
+        }
+        return true;
+      },
+    };
+
+    // var cart = {
+    //   eggs: 0.98,
+    //   milk: 1.23,
+    //   magazine: 4.99,
+    //   chocolate: 0.45
+    // }
+
+    // for(var item in cart) {
+    //   console.log(item + ": " + cart[item]);
+    //   cashRegister.add(cart[item]);
+    // }
+
+    cashRegister.scan("chocolate", 3);
+    cashRegister.scan("eggs", 10);
+    cashRegister.scan("milk", 1);
+    cashRegister.scan("magazine", 1);
+    cashRegister.voidLastTransaction("eggs", 3)
+    console.log("Your total is " + cashRegister.total.toFixed(2));
+    
+
+  </script>
+
+</body>
+</html>
+
+
