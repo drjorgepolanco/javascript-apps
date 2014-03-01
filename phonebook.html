@@ -1,124 +1,114 @@
 <html>
-<head>
-  <title>Simple Contact List</title>
-  <style type="text/css">
-    #templates { display: none; }
-    #scores .item {
-      background: #ddd;
-      padding: 1px 10px;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <title>Simple Contact List</title>
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      
+      var bob = {
+        firstName: "Bob",
+        lastName: "Bullock",
+        phoneNumber: "(650) 899 - 9918",
+        email: "bob.bullock@example.com"
+      };
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-<script type="text/javascript">
-  
-  var bob = {
-    firstName: "Bob",
-    lastName: "Bullock",
-    phoneNumber: "(650) 899 - 9918",
-    email: "bob.bullock@example.com"
-  };
+      var mary = {
+        firstName: "Mary",
+        lastName: "Johnson",
+        phoneNumber: "(650) 888 - 8888",
+        email: "mary.johnson@example.com"
+      };
 
-  var mary = {
-    firstName: "Mary",
-    lastName: "Johnson",
-    phoneNumber: "(650) 888 - 8888",
-    email: "mary.johnson@example.com"
-  };
-
-  var jorge = {
-    firstName: "Jorge",
-    lastName: "Polanco",
-    phoneNumber: "(201) 928 - 8008",
-    email: "jorge.polanco@example.com"
-  };
+      var jorge = {
+        firstName: "Jorge",
+        lastName: "Polanco",
+        phoneNumber: "(201) 928 - 8008",
+        email: "jorge.polanco@example.com"
+      };
 
 
-  // THE CONTACT LIST
-  // ****************
+      // THE CONTACT LIST
+      // ****************
 
-  var contacts = [];
+      var contacts = [];
 
-  contacts[0] = bob;
-  contacts[1] = mary;
-  contacts[2] = jorge;
+      contacts[0] = bob;
+      contacts[1] = mary;
+      contacts[2] = jorge;
 
-  console.log(contacts);
-  console.log(contacts[1].phoneNumber);
-
-
-  
-  // PRINT ONE ENTRY
-  // ***************
-
-  var printPerson = function (person) {
-    console.log(person.firstName + " " + person.lastName);
-  }
-
-  printPerson(bob);
+      console.log(contacts);
+      console.log(contacts[1].phoneNumber);
 
 
+      
+      // PRINT ONE ENTRY
+      // ***************
 
-  // PRINT EMAIL LIST
-  // ****************
-
-  for(var x = 0; x < contacts.length; x++) {
-    console.log(contacts[x].email);
-  };
-
-
-  
-  // PRINT CONTACT LIST
-  // ******************
-
-  function list() {
-    for(var i = 0; i < contacts.length; i++) {
-      console.log(contacts[i]);
-    }
-  } 
-
-  list();
-
-
-
-  // FIND ENTRY BY LAST NAME
-  // *****************
-
-  var search = function (lastName) {
-    var contactsLength = contacts.length;
-    for(var j = 0; j < contactsLength; j++) {
-      if (contacts[j].lastName === lastName) {
-        printPerson(contacts[j]);
+      var printPerson = function (person) {
+        console.log(person.firstName + " " + person.lastName);
       }
-    }
-  }
 
-  search("Polanco");
+      printPerson(bob);
 
 
 
-  // ADD NEW ENTRY
-  // *************
+      // PRINT EMAIL LIST
+      // ****************
 
-  var addEntry = function(firstName, lastName, phoneNumber, email) {
-    contacts[contacts.length] = {
-      firstName: firstName,
-      lastName: lastName,
-      phoneNumber: phoneNumber,
-      email: email
-    }
-  }
+      for(var x = 0; x < contacts.length; x++) {
+        console.log(contacts[x].email);
+      };
 
-  addEntry("Victoria", "Smith", "(512) 234 - 9384", "victoria.smith@example.com");
 
-  contacts;
-  contacts[3];
+      
+      // PRINT CONTACT LIST
+      // ******************
 
-</script>
+      function list() {
+        for(var i = 0; i < contacts.length; i++) {
+          console.log(contacts[i]);
+        }
+      } 
 
-</body>
+      list();
+
+
+
+      // FIND ENTRY BY LAST NAME
+      // *****************
+
+      var search = function (lastName) {
+        var contactsLength = contacts.length;
+        for(var j = 0; j < contactsLength; j++) {
+          if (contacts[j].lastName === lastName) {
+            printPerson(contacts[j]);
+          }
+        }
+      }
+
+      search("Polanco");
+
+
+
+      // ADD NEW ENTRY
+      // *************
+
+      var addEntry = function(firstName, lastName, phoneNumber, email) {
+        contacts[contacts.length] = {
+          firstName: firstName,
+          lastName: lastName,
+          phoneNumber: phoneNumber,
+          email: email
+        }
+      }
+
+      addEntry("Victoria", "Smith", "(512) 234 - 9384", "victoria.smith@example.com");
+
+      contacts;
+      contacts[3];
+
+    </script>
+
+  </body>
 </html>
