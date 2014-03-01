@@ -5,15 +5,38 @@
   <body>
 
     <script type="text/javascript">
-      
+
+
       var baseFare = 2.50;
       var costPerMile = 2.00;
 
-      var taxiFare = function (distance) {
-        return baseFare + (distance * costPerMile);
+      var dayTrip = function (distance) {
+        console.log(baseFare + (distance * costPerMile));
       };
 
-      taxiFare(34);
+      var nightTrip = function (distance) {
+        // Extra fee due to night rates
+        var extraPerMile = 0.50;
+        var totalPerMile = costPerMile + extraPerMile;
+        console.log((distance * totalPerMile) + baseFare);
+      };
+
+      var taxiFare = function(pickUpTime, distance) {
+        // If pickUpTime is at or after 8pm or before 6 am
+        if (pickUpTime >= 20 || pickUpTime < 6) {
+          return nightTrip(distance);
+        } else {
+          return dayTrip(distance);
+        }
+      };
+
+      // 11pm, 17 miles
+      taxiFare(23, 17);
+
+      // 2pm, 5 miles
+      taxiFare(14, 5);
+
+
 
     </script>
 
