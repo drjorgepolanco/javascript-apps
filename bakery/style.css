@@ -1,0 +1,13 @@
+#bakery .display div { 
+  width: 200px; 
+  height: 200px; 
+  float: left; 
+}
+
+#bakery .display .cupcake { 
+  background: url("http://i.imgur.com/9ix2JRZ.jpg"); 
+}
+      
+#bakery .display .cookie { 
+  background: url("http://i.imgur.com/Yxq78qn.jpg"); 
+}
