@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var name1 = "camilo";
+var name2 = "monica";
+var name3 = "gilbert";
+
+var res1 = false;
+var res2 = false;
+var res3 = false;
+
+while (true) {
+  var name = prompt("What name is your reservation under?");
+
+  if (name === name1) {
+    if (res1 === false) {
+      console.log("Welcome to the Food Palace!");
+      res1 = true;
+      break;            
+    } else {
+      console.log("Sorry. That reservation is already claimed");
+      break;
+    }
+  } else if (name === name2) {
+    if (res2 === false) {
+      console.log("Welcome to the Food Palace!");
+      res2 = true;
+      break;
+    } else {
+       console.log("Sorry. That reservation is already claimed");
+       break;
+    }
+  } else if (name === name3) {
+    if (res3 === false) {
+      console.log("Welcome to the Food Palace!");
+      res3 = true;
+      break;
+    } else {
+      console.log("Sorry. That reservation is already claimed");
+      break;
+    }
+  } else {
+    console.log("Sorry. The is no reservation under that name.")
+    break;
+  }
+  if (name === 'exit') {
+    break;
+  }
+}
+
+
+
+// var reservations = []
+
+// var newReservation = function(name) {
+//   reservations.push(name);
+// };
+
+// var askName = function() {
+//   var userName = prompt("Good Evening! Under what name is your reservation under?");
+//   newReservation(userName);
+//   console.log(reservations);
+// }
+// askName();
+
+// var findReservation = function() {
+//   for(var i = 0; i < reservations.length; i++) {
+//     console.log(reservations[i]); 
+//   };
+// }
+
+
+
+
+</script>
+
+</body>
+</html>
