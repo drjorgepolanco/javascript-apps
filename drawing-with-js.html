@@ -4,9 +4,9 @@
         <title>Let's Draw!</title>
         <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
         <style>
-        canvas {
-                border: 1px dotted black;
-                }
+            canvas {
+                border: 1px dotted red;
+            }
         </style>
     </head>
     <body>
@@ -67,22 +67,12 @@
         context.closePath();
         context.fill();
 
-        // SEMI CIRCLE
-        // context.beginPath();
-        // context.arc(75,75,35,0,Math.PI);
-        // context.stroke();
-
-        // CIRCLE
-        // context.beginPath();
-        // context.arc(95,85,40,0,2*Math.PI);
-        // context.stroke();
-
-        // FILLED RECTANGLE
+        // CHEST
         context.fillStyle = "#336699";
         context.fillRect(100, 140, 100, 64);
 
         // TEXT
         context.font = "30px bold";
-        context.fillText("Yoohoo!!!!!", 20, 50);
+        context.fillText("Hello World!", 20, 50);
     </script>
 </html>
