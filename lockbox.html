@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <title>Javascript Functions</title>
+  <style type="text/css">
+
+    .spacer {
+      height: 500px;
+    }
+
+    .box {
+      display: none;
+      height: 100px;
+      width: 100px;
+      background-color: #ff0000;
+    }
+
+    img {
+      width: 100px;
+      position: absolute;
+    }
+
+  </style>
+</head>
+
+<body>
+  <label>Clicks: 0</label>
+
+  <div id="elevator">
+    <button class="down" href="#">
+        Down
+      </button>
+    <div class="elevator">
+      <img src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Elevator_icon.png"/>
+    </div>
+  </div>
+
+  <div class="spacer">
+  </div>
+  <div id="box">
+    <div class="box">
+      <button class="up" href="#">
+        Up
+      </button>
+      <button class="close-box" href="#">
+        Close the Box
+      </button>
+    </div>
+
+    <button class="open-box" href="#">
+      Open the Box
+    </button>
+
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    $('.down').on('click', function () {
+      $('img').animate({top: "+=400px"}, 3000)
+    });
+
+    $('.open-box').on('click', function (e) {
+      e.preventDefault();
+      $(".box").show();
+    });
+
+    $('.up').on('click', function () {
+      $('img').animate({top: "-=300px"}, 3000)
+    });
+
+    $(".close-box").on("click", function (e) {
+      $(".box").hide();
+    });
+    var counter = 0;
+    $("body").on("click", function (e) {
+      counter += 1;
+      $("label").text('Clicks: ' + counter);
+    });
+
+
+
+    // $(document).on('new-click-count', function (e){
+    //   if (counter % 5 === 0) {
+    //     alert("New High Score: " + counter + "!");
+    //   });
+    // $(document).trigger('new-click-count', counter);
+
+  </script>
+
+</body>
+</html>
